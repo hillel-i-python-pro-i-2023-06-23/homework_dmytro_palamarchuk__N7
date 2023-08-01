@@ -3,12 +3,14 @@
 import random
 
 from dataclasses import dataclass, field
-from faker import Faker
 from typing import TypeAlias
+from faker import Faker
 
 from app.entity.human import Human, T_GROUP_NAME, T_GROUP_NAMES
 
+# pylint: disable= invalid-name
 T_HUMANS: TypeAlias = list[Human]
+# pylint: enable= invalid-name
 
 
 @dataclass
@@ -32,6 +34,7 @@ class DataProvider:
     def _generate_humans(
         self, groups: T_GROUP_NAMES, amount_of_humans: int
     ) -> T_HUMANS:
+        """Generate a human"""
         members = []
         for _ in range(amount_of_humans):
             group_name = random.choice(groups)
@@ -45,6 +48,8 @@ class DataProvider:
         amount_of_groups: None | int = None,
         amount_of_humans: None | int = None,
     ) -> T_HUMANS:
+        """Generate a list of groups members"""
+
         amount_of_groups = amount_of_groups or random.randint(5, 10)
         amount_of_humans = amount_of_humans or random.randint(3, 30)
 

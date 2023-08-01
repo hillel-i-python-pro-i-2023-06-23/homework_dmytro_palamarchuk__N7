@@ -4,7 +4,9 @@ from typing import TypeAlias
 
 from app.data_provider import T_HUMANS
 
+# pylint: disable= invalid-name
 T_GROUPS_DATA: TypeAlias = dict[str, list[str]]
+# pylint: enable= invalid-name
 
 
 def organize_data(humans: T_HUMANS) -> T_GROUPS_DATA:
@@ -13,7 +15,7 @@ def organize_data(humans: T_HUMANS) -> T_GROUPS_DATA:
 
     Parameters
     ----------
-    humans: T_HUMANS
+    humans: THumans
         list of humans to organize
 
     Returns
